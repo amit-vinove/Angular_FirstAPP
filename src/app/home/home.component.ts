@@ -11,5 +11,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  public items:any = [];
+  
+  public newTask:any="";
+
+  
+  public addToList() {
+      if (this.newTask == '') {
+      }
+      else {
+          this.items.push(this.newTask);
+          this.newTask = '';
+      }
+      console.log(this.items);
+  }
+  public deleteTask(index:number) {
+      this.items.splice(index, 1);
+  }
 
 }

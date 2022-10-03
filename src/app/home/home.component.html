@@ -1,1 +1,69 @@
-<p>home works!</p>
+<div>
+  <input [(ngModel)]="newTask" class="input" type="text"  placeholder="Add Todo" /><br />
+  <button class="addTodoBtn" (click)="addToList()" >
+    <i class="fa-regular fa-square-plus"></i> Add Todo
+  </button>
+</div>
+
+<div class="todoCard">
+  <div class="todos">
+    <div class="todoText">
+      <h2>First Todo</h2>
+    </div>
+    <div class="todoControl">
+      <button class="delBtn">
+        <i
+          class="fa-sharp fa-solid fa-trash"
+          style="font-size: 18px; color: white"
+        ></i>
+      </button>
+      <button class="addBtn">
+        <i
+          class="fa-solid fa-square-check"
+          style="font-size: 20px; color: white"
+        ></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="todos">
+    <div class="todoText">
+      <h2>Second Todo</h2>
+    </div>
+    <div class="todoControl">
+      <button class="delBtn">
+        <i
+          class="fa-sharp fa-solid fa-trash"
+          style="font-size: 18px; color: white"
+        ></i>
+      </button>
+
+      <button class="addBtn">
+        <i
+          class="fa-solid fa-square-check"
+          style="font-size: 20px; color: white"
+        ></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="todos">
+    <div class="todoText">
+      <h2>Third Todo</h2>
+    </div>
+    <div class="todoControl">
+      <button class="delBtn">
+        <i
+          class="fa-sharp fa-solid fa-trash"
+          style="font-size: 18px; color: white"
+        ></i>
+      </button>
+      <button class="addBtn">
+        <i
+          class="fa-solid fa-square-check"
+          style="font-size: 20px; color: white"
+        ></i>
+      </button>
+    </div>
+  </div>
+</div>
