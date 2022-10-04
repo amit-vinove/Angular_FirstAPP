@@ -68,7 +68,15 @@
     width: 70%;
     margin-top: 15px;
 }
+.todoName{
+    color: black;
+}
 .todoControl{
     width: 30%;
     margin-top: 15px;
+}
+.todoStyleChecked{
+    text-decoration: line-through;
+    color: grey;
+    font-weight: 400;
 }

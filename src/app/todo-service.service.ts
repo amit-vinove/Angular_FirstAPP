@@ -17,4 +17,12 @@ export class TodoServiceService {
   public postTodos(data:any):any{
     return this._httpClient.post("http://localhost:5032/api/Todo/AddTodo",data);
   }
+
+  public putTodos(data:any):any{
+    return this._httpClient.put(`http://localhost:5032/api/Todo/CheckTodo/?checkTodo=${data.checked}&todoId=${data.todoId}`,data);
+  }
+
+  public deleteTodos(data:any):any{
+    return this._httpClient.delete(`http://localhost:5032/api/Todo/DeleteTodo?todoId=${data.todoId}`,data);
+  }
 }

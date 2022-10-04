@@ -9,16 +9,16 @@
 
   <div class="todos" *ngFor="let data of todosDb">
     <div class="todoText">
-      <h2 [innerText]="data.todoName">{{data.todoName}}</h2>
+      <h2 [innerText]="data.todoName" [ngClass]="data.checked ? 'todoStyleChecked' : 'todoName' ">{{data.todoName}}</h2>
     </div>
     <div class="todoControl">
-      <button class="delBtn">
+      <button class="delBtn" (click)="deleteTodo(data)">
         <i
           class="fa-sharp fa-solid fa-trash"
           style="font-size: 18px; color: white"
         ></i>
       </button>
-      <button class="addBtn">
+      <button class="addBtn" (click)="editTodo(data)">
         <i
           class="fa-solid fa-square-check"
           style="font-size: 20px; color: white"
