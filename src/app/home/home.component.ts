@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ITodo } from '../todo';
+import {Observable,Subscription} from 'rxjs';
+import { TodoServiceService } from '../todo-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _todoService : TodoServiceService) { }
 
+  public todosDb:ITodo[] = [];
   ngOnInit(): void {
+    this._todoService.getTodos().subscribe(data=>this.todosDb=data);
   }
-  public items:any = [];
   
+  public items:any = [];
+   
   public newTask:any="";
 
   
@@ -20,10 +27,16 @@ export class HomeComponent implements OnInit {
       if (this.newTask == '') {
       }
       else {
-          this.items.push(this.newTask);
-          this.newTask = '';
+          let data = {todoId:0,todoName:this.newTask,userId:2,checked:false,username:'Amitk6228'};
+          this._todoService.postTodos(data).subscribe((res:any)=>{
+          // if(res.status == 200){
+            this.todosDb.push(res);
+            this.newTask = '';
+            console.log(this.todosDb)
+          // }
+        }
+          );
       }
-      console.log(this.items);
   }
   public deleteTask(index:number) {
       this.items.splice(index, 1);
