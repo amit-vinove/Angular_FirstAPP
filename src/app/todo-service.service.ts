@@ -11,18 +11,22 @@ export class TodoServiceService {
   constructor(private _httpClient:HttpClient) { }
 
   public getTodos():Observable<ITodo[]>{
-    return this._httpClient.get<ITodo[]>("http://localhost:5032/api/Todo");
+    return this._httpClient.get<ITodo[]>("https://localhost:7112/api/TodoQuery");
   }
 
   public postTodos(data:any):any{
-    return this._httpClient.post("http://localhost:5032/api/Todo/AddTodo",data);
+    return this._httpClient.post("https://localhost:7058/api/Todo",data);
   }
 
   public putTodos(data:any):any{
-    return this._httpClient.put(`http://localhost:5032/api/Todo/CheckTodo/?checkTodo=${data.checked}&todoId=${data.todoId}`,data);
+    return this._httpClient.put(`https://localhost:7058/api/Todo`,data);
   }
 
   public deleteTodos(data:any):any{
-    return this._httpClient.delete(`http://localhost:5032/api/Todo/DeleteTodo?todoId=${data.todoId}`,data);
+    return this._httpClient.delete(`https://localhost:7058/api/Todo?Id=${data.todoId}`,data);
+  }
+
+  public login(data:any):any{
+    return this._httpClient.post(`https://localhost:7112/api/UserLogin`,data);
   }
 }

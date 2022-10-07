@@ -29,16 +29,12 @@ export class HomeComponent implements OnInit {
       let data = {
         todoId: 0,
         todoName: this.newTask,
-        userId: 2,
+        userId: 1,
         checked: false,
-        username: 'Amitk6228',
       };
       this._todoService.postTodos(data).subscribe((res: any) => {
-        // if(res.status == 200){
-        this.todosDb.push(res);
+        this.todosDb.push(res.data);
         this.newTask = '';
-        console.log(this.todosDb);
-        // }
       });
     }
   }
@@ -48,16 +44,25 @@ export class HomeComponent implements OnInit {
     if(todo.checked === false){
     data = {
       todoId: todo.todoId,
+      todoName: todo.todoName,
+      userId: todo.userId,
       checked: true,
     };
   }if(todo.checked === true){
     data = {
       todoId: todo.todoId,
+      todoName: todo.todoName,
+      userId: todo.userId,
       checked: false,
     };
   }
     this._todoService.putTodos(data).subscribe((res: any) => {
-      this.todosDb = res.data;
+      if(res.responseCode == 200){
+        this._todoService.getTodos().subscribe((data) => (this.todosDb = data));
+      }
+    },
+    (err:any)=>{
+      console.log(err);
     });
   }
 
@@ -67,6 +72,9 @@ export class HomeComponent implements OnInit {
         let filtered = this.todosDb.filter((item) => item.todoId !== todo.todoId);
         this.todosDb = filtered;
       }
+    },    
+    (err:any)=>{
+      console.log(err);
     });
   }
 }

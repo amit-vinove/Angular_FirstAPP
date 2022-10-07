@@ -1,0 +1,37 @@
+<div class="">
+<div class="signin">
+    <form action="#" method="post" autocomplete="off">
+        <div class="group head">
+            <h2>Welcome Back,</h2>
+
+            <p>Sign In To Continue</p>
+        </div>
+    <br/>
+        <div class="group">
+            <label for="username-field" class="username">Email or Username</label><br />
+
+            <input type="text" [(ngModel)]="username" name="username" id="username-field" required />
+        </div>
+
+        <div class="group">
+            <label for="password-field">Password</label><br />
+
+            <input type="password" [(ngModel)]="password" name="password" id="password-field" required />
+
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+        </div>
+
+        <div class="group forgot-pass-link">
+            <a href="#">Forget Password?</a>
+        </div>
+
+        <div class="group">
+            <button type="submit" (click)="login()"><span>Login</span></button>
+        </div>
+
+        <div class="group sign-up-link">
+            <p>New User? <a href="#">Signup</a></p>
+        </div>
+    </form>
+</div>
+</div>
