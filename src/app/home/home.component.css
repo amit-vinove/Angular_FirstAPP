@@ -12,6 +12,55 @@
     width: 700px;
     margin-top: 30px;
 }
+.subDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.labelDiv{
+    display: flex;
+    justify-content: space-between; 
+}
+.select{
+    height: 45px;
+    display: block;
+    width: 300px;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+.category{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: white;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 18px;
+    height: 45px;
+    width: 350px;
+}
+label{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
 .addTodoBtn{
     height: 35px;
     width: 110px;
@@ -21,7 +70,7 @@
     color: white;
     border: 1px solid transparent;
     border-radius: .25rem;
-    margin-top: -10px;
+    margin-top: 5px;
 }
 .addTodoBtn:hover{
     background-color: #0b53bd;
@@ -30,7 +79,7 @@
     border-radius: .25rem;
 }
 .todoCard{
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .todos{
     background-color: #fff;
@@ -79,4 +128,76 @@
     text-decoration: line-through;
     color: grey;
     font-weight: 400;
+}
+
+.spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 8px;
+  }
+
+  .toolbar #youtube-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover,
+  .toolbar #youtube-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+  .logoutBtn{
+    height: 35px;
+    width: 110px;
+    font-size: 17px;
+    float: right;
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    margin-right: 10px;
+    font-weight: 600;
+}
+.logoutBtn:hover{
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: .25rem;
 }
