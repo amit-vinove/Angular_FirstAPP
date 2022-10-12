@@ -9,12 +9,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, NgModel } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { EBarChartComponent } from './e-bar-chart/e-bar-chart.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    BarChartComponent,
+    EBarChartComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,10 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
